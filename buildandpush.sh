@@ -14,8 +14,8 @@ do
 	pushd $d
 	build_image
 
-	img=$(dirname $i)
-	tag=$(basename $i)
+	img=$(dirname $d)
+	tag=$(basename $d)
 	docker push jechas01/$img:$tag
 	popd
 done
