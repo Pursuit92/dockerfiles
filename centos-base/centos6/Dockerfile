@@ -3,7 +3,7 @@ FROM centos:centos6
 MAINTAINER Josh Chase <jcjoshuachase@gmail.com>
 
 RUN yum update -y && \
-	yum install -y busybox nfs-utils && \
+	yum install -y busybox && \
 	rm -rf /var/cache/yum/* && \
 	ln -s /sbin/busybox /sbin/runsv && \
 	ln -s /sbin/busybox /sbin/runsvdir && \
