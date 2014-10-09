@@ -1,0 +1,5 @@
+#!/bin/sh
+
+runsvdir -P /service &
+
+exec /bin/bash

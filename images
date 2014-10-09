@@ -1,0 +1,6 @@
+centos-base/centos6
+centos-epel/centos6
+openstack-base/havana
+openstack-keystone/havana
+openstack-nova/havana
+openstack-glance/havana
