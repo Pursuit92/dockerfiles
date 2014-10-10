@@ -1,5 +1,9 @@
 #!/bin/sh
 
-runsvdir -P /service &
-
-exec /bin/bash
+if [ -z "$1" ]
+then
+	runsvdir -P /service
+else
+	runsvdir -P /service &
+	exec $@
+fi
