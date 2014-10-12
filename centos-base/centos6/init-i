@@ -12,6 +12,7 @@ do
 #!/bin/sh
 exec svlogd -tt .
 EOF
+		chmod +x ${sv}/log/run
 	fi
 done
 
