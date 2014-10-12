@@ -8,6 +8,8 @@ RUN yum update -y && \
 	ln -s /sbin/busybox /sbin/runsv && \
 	ln -s /sbin/busybox /sbin/runsvdir && \
 	ln -s /sbin/busybox /sbin/sv && \
+	ln -s /sbin/busybox /sbin/chpst && \
+	ln -s /sbin/busybox /sbin/svlogd && \
 	mkdir /service
 
 ADD init-i /sbin/init-i
