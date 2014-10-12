@@ -1,5 +1,20 @@
 #!/bin/sh
 
+find /service -mindepth 1 -maxdepth 1 -type d | \
+while read sv
+do
+	if [ -d ${sv}/log ]
+	then
+		continue
+	else
+		mkdir -p ${sv}/log
+		cat << EOF > ${sv}/log/run
+#!/bin/sh
+exec svlogd -tt .
+EOF
+	fi
+done
+
 if [ -z "$1" ]
 then
 	runsvdir -P /service
