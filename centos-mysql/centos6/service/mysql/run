@@ -1,0 +1,8 @@
+#!/bin/bash
+
+if [ ! -d /var/lib/mysql/mysql ]
+then
+	/usr/bin/mysql_install_db
+fi
+
+/usr/bin/mysqld_safe --datadir=/var/lib/mysql --user=mysql
