@@ -1,4 +1,5 @@
 centos-base/centos6
+centos-mysql/centos6
 centos-epel/centos6
 openstack-base/havana
 openstack-keystone/havana
