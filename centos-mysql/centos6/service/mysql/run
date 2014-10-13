@@ -1,5 +1,7 @@
 #!/bin/bash
 
+chown -R mysql:mysql /var/lib/mysql
+
 if [ ! -d /var/lib/mysql/mysql ]
 then
 	/usr/bin/mysql_install_db
