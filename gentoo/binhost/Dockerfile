@@ -2,7 +2,14 @@ FROM jechas01/gentoo
 
 MAINTAINER Josh Chase <jcjoshuachase@gmail.com>
 
-EXPOSE 8080
+RUN emerge lighttpd inotify-tools && rm -rf /usr/portage/distfiles/* /var/tmp/*
 
-RUN emerge lighttpd && rm -rf /usr/portage/distfiles/*
-ADD make.conf /etc/portage/make.conf
+RUN mkdir /etc/portage/sets /portage && touch /portage/world && ln -s /portage/world /etc/portage/sets/other_world && mv /etc/portage/make.conf /portage && ln -s /portage/make.conf /etc/portage/make.conf
+
+ADD builder.sh /usr/local/bin/builder.sh
+RUN chmod +x /usr/local/bin/builder.sh && ln -s /usr/local/bin/builder.sh /etc/cron.daily/
+
+ADD lighttpd.conf /etc/lighttpd/lighttpd.conf
+ADD service /service
+
+EXPOSE 80

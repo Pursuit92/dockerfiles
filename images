@@ -5,3 +5,5 @@ openstack-base/havana
 openstack-keystone/havana
 openstack-nova/havana
 openstack-glance/havana
+gentoo/latest
+gentoo/binhost

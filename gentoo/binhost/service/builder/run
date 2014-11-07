@@ -1,0 +1,8 @@
+#!/bin/bash
+
+while true
+do
+	inotifywait -e modify -r /portage
+	sleep 1
+	/usr/local/bin/builder.sh
+done
