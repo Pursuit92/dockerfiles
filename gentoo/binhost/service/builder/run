@@ -1,5 +1,10 @@
 #!/bin/bash
 
+if [ ! -e /portage/world ]
+then
+	cp -r /skel/portage/* /portage/
+fi
+
 while true
 do
 	inotifywait -e modify -r /portage
