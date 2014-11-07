@@ -5,9 +5,11 @@ then
 	cp -r /skel/portage/* /portage/
 fi
 
+[ -x /portage/first ] && /portage/first
+
 while true
 do
-	inotifywait -e modify -r /portage
-	sleep 1
 	/usr/local/bin/builder.sh
+	inotifywait -e modify -r /portage
+	sleep 30
 done
